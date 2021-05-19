@@ -1,17 +1,13 @@
 package com.example.gitdemo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.os.PersistableBundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.security.Key;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static String NUMBER = "number";
@@ -26,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mButtonAdd = findViewById(R.id.buttonAdd);
         mButtonSub = findViewById(R.id.buttonSub);
 
-        number = savedInstanceState!=null ?savedInstanceState.getInt(NUMBER):0;
+        number = savedInstanceState != null ? savedInstanceState.getInt(NUMBER) : 0;
 
         mTextView = findViewById(R.id.textview);
         mTextView.setText(String.valueOf(number));
@@ -37,18 +33,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.zero:
-                mTextView.setText(String.valueOf(number=0));
+                mTextView.setText(String.valueOf(number = 0));
                 break;
 
-            default:break;
+            default:
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -59,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(NUMBER,number);
+        outState.putInt(NUMBER, number);
 
     }
 }
