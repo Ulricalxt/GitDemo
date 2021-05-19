@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int number = 0;
-    private Button mButtonAdd ,mButtonSub;
+    private Button mButtonAdd, mButtonSub;
     private TextView mTextView;
 
     @Override
